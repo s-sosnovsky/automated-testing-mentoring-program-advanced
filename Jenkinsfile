@@ -1,5 +1,10 @@
 pipeline {
+    
     agent any
+    
+    options {
+        skipDefaultCheckout(false)
+    }
     
     stages {
         stage('Clone SCM for sonar') {
