@@ -1,5 +1,4 @@
 pipeline {
-    
     agent any
 
     options {
@@ -15,6 +14,7 @@ pipeline {
           url: 'git@github.com:s-sosnovsky/automated-testing-mentoring-program-advanced.git'
             }
         }
+        
         stage('SonarQube analysis') {
             steps {
                 script {
@@ -25,6 +25,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Quality gate') {
             steps {
                 script {
