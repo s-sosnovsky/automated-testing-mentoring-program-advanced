@@ -9,7 +9,7 @@ pipeline {
         stage('Clone SCM for sonar') {
             steps {
                 cleanWs()
-                git branch: 'hometask1',
+                git branch: 'master',
           credentialsId: '4f4087e3-4400-48ce-8d7e-cde888eb1536',
           url: 'git@github.com:s-sosnovsky/automated-testing-mentoring-program-advanced.git'
             }
