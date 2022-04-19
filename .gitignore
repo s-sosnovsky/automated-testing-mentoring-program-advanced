@@ -65,3 +65,6 @@ allure-results/
 
 #vs code config
 .vscode/
+
+#sonar scanner local
+.scannerwork/
