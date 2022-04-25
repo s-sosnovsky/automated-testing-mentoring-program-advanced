@@ -1,13 +1,21 @@
 pipeline {
-    
     agent any
-    
+
+    environment {
+        USER_LOGIN = credentials('test_user_default')
+        USER_PASSWORD = credentials('test_user_default_password')
+    }
+
     options {
         skipDefaultCheckout(false)
     }
-    
+
+    tools {
+        nodejs 'nodejs'
+    }
+
     stages {
-        stage('Clone SCM for sonar') {
+        stage('clone fron git') {
             steps {
                 cleanWs()
                 git branch: 'master',
@@ -15,8 +23,8 @@ pipeline {
           url: 'git@github.com:s-sosnovsky/automated-testing-mentoring-program-advanced.git'
             }
         }
-        
-        stage('SonarQube analysis') {
+
+        stage('sonarqube scan') {
             steps {
                 script {
                     scannerHome = tool 'sonar-scanner'
@@ -26,8 +34,8 @@ pipeline {
                 }
             }
         }
-        
-        stage('Quality gate') {
+
+        stage('quality gate') {
             steps {
                 script {
                     def qualitygate = waitForQualityGate()
@@ -35,6 +43,36 @@ pipeline {
                     if (qualitygate.status != 'OK') {
                         waitForQualityGate abortPipeline: true
                     }
+                }
+            }
+        }
+
+        stage('build') {
+            steps {
+                script {
+                    bat 'npm install'
+                }
+            }
+        }
+
+        stage('test') {
+            steps {
+                script {
+                    bat 'npm test'
+                }
+            }
+        }
+
+        stage('allure-report') {
+            steps {
+                script {
+                    allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'allure-results']]
+            ])
                 }
             }
         }
