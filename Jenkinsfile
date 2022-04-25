@@ -15,7 +15,7 @@ pipeline {
     }
 
     stages {
-        stage('clone fron git') {
+        stage('clone from git') {
             steps {
                 cleanWs()
                 git branch: 'master',
@@ -66,13 +66,7 @@ pipeline {
         stage('allure-report') {
             steps {
                 script {
-                    allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'allure-results']]
-            ])
+                   allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
                 }
             }
         }
