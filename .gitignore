@@ -63,8 +63,14 @@ typings/
 # allure results
 allure-results/
 
+# allure results
+allure-report/
+
 #vs code config
 .vscode/
 
 #sonar scanner local
 .scannerwork/
+
+#mochawesome-report
+mochawesome-report/

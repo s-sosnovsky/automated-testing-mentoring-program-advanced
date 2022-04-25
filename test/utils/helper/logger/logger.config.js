@@ -1,4 +1,4 @@
-import winston from "winston";
+const winston = require("winston");
 
 const customLogger = winston.createLogger({
   level: "debug",
@@ -9,4 +9,4 @@ const customLogger = winston.createLogger({
   format: winston.format.simple(),
 });
 
-export default customLogger;
+module.exports= customLogger;

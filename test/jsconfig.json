@@ -5,10 +5,7 @@
     "esModuleInterop": true,
     "suppressExcessPropertyErrors": true,
     "types": [
-      "node",
-      "webdriverio/async",
-      "@wdio/mocha-framework",
-      "expect-webdriverio"
+      "node"
     ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
