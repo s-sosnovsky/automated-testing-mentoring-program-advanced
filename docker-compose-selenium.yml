@@ -43,7 +43,7 @@ services:
   
 
   app:
-    image: dockerizedapp:latest
+    build: .
     command: npm test -- --host selenium-hub
     links:
       - selenium-hub
