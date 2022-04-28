@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 set -e
 
 host="selenium-hub"
