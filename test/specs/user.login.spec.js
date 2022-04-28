@@ -1,18 +1,15 @@
 const PageFactory = require("../pageobjects/pageFactory");
 const { assert } = require("chai");
-const firedBrowser = require("../wrapper/browser.config");
+const firedBrowser = require("../wrapper/browser");
 
-describe("Check navigation items number", () => {
+describe("Check navigation items number", async () => {
   let testBrowser;
   let pageFactory;
 
   beforeEach("login", async () => {
-    testBrowser = await firedBrowser.browser;
+    testBrowser = await firedBrowser;
     pageFactory = new PageFactory(testBrowser);
-    await pageFactory.loginPage.login(
-      process.env.USER_LOGIN,
-      process.env.USER_PASSWORD
-    );
+    await pageFactory.loginPage.login("default","1q2w3e");
   });
 
   afterEach("logout", async () => {

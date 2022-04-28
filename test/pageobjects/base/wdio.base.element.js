@@ -13,7 +13,7 @@ class WDIOBaseElement {
   }
 
   async click() {
-    await this._element.waitForClickable({ timeout: 25000 });
+    await this._element.waitForClickable({ timeout: 15000 });
     customLogger.info(`Clicking on element: "${this._elementName}"`);
     return this._element.click();
   }
