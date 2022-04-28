@@ -2,7 +2,7 @@ module.exports = {
   firefoxBrowser: {
     maxInstances: 10,
     automationProtocol: "webdriver",
-    hostname: "192.168.0.1",
+    hostname: "192.168.0.101",
     port: 4444,
     logLevel: "trace",
     capabilities: {
@@ -15,7 +15,7 @@ module.exports = {
   chromeBrowser: {
     maxInstances: 10,
     automationProtocol: "webdriver",
-    hostname: "192.168.0.1",
+    hostname: "192.168.0.101",
     port: 4444,
     logLevel: "trace",
     capabilities: {
