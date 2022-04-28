@@ -6,4 +6,4 @@ COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 ADD . /app
 WORKDIR /app
 RUN npm i
-ENTRYPOINT [ "entrypoint.sh" ]
+# ENTRYPOINT [ "entrypoint.sh" ]
