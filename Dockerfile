@@ -6,5 +6,4 @@ RUN apt-get update
 ADD . /app
 WORKDIR /app
 RUN npm i
-VOLUME /app
 # ENTRYPOINT [ "entrypoint.sh" ]
