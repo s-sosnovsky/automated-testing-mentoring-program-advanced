@@ -42,12 +42,12 @@ services:
       - "4444:4444"
   
 
-  app:
-    build: .
-    command: npm test -- --host selenium-hub
-    links:
-      - selenium-hub
-    depends_on:
-      - selenium-hub
-    volumes:
-      - ./test/specs:/app/test/specs
+#   app:
+#     build: .
+#     command: npm test -- --host selenium-hub
+#     links:
+#       - selenium-hub
+#     depends_on:
+#       - selenium-hub
+#     volumes:
+#       - ./test/specs:/app/test/specs
