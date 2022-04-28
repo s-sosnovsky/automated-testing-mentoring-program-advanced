@@ -2,7 +2,7 @@ module.exports = {
   firefoxBrowser: {
     maxInstances: 10,
     automationProtocol: "webdriver",
-    hostname: "selenium-hub",
+    hostname: "localhost",
     port: 4444,
     logLevel: "trace",
     capabilities: {
@@ -15,7 +15,7 @@ module.exports = {
   chromeBrowser: {
     maxInstances: 10,
     automationProtocol: "webdriver",
-    hostname: "selenium-hub",
+    hostname: "localhost",
     port: 4444,
     logLevel: "trace",
     capabilities: {
