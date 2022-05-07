@@ -7,10 +7,16 @@ const dockerConfig = require('./browser.docker.config')
 /**
  * wdio runner config
  */
+// const browserConfiguration = async () => {
+//   return new FiredBrowser(await multiremote(await Promise.resolve(dockerConfig))).browser
+// }
+//  const rawBrowser = browserConfiguration();
+
+
+// module.exports = rawBrowser;
+
 const browserConfiguration = async () => {
-  return new FiredBrowser(await multiremote(await Promise.resolve(dockerConfig))).browser
+  return multiremote(await Promise.resolve(dockerConfig))
 }
- const rawBrowser = browserConfiguration();
 
-
-module.exports = rawBrowser;
+module.exports =  browserConfiguration;
