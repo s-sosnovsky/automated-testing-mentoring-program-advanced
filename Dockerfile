@@ -5,5 +5,6 @@ RUN apt-get update
 # COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 ADD . /app
 WORKDIR /app
+RUN npm cache verify
 RUN npm i
 # ENTRYPOINT [ "entrypoint.sh" ]
