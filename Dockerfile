@@ -11,4 +11,4 @@ WORKDIR /app
 RUN npm cache verify
 RUN npm i
 
-ENTRYPOINT ["sh","/usr/bin/wait-for-grid.sh"]
+ENTRYPOINT ["sh", "wait-for-grid.sh"]
