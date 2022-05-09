@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # wait-for-grid.sh
 
 set -e
