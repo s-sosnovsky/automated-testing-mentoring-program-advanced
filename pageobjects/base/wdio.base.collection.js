@@ -1,5 +1,4 @@
-const customLogger = require("../../../utils/helper/logger/logger.config");
-
+const customLogger = require("../../test/utils/helper/logger/logger.config");
 class WDIOBaseCollection {
   constructor(browser, collectionName, locator) {
     this._browser = browser;

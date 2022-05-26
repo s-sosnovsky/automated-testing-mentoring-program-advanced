@@ -92,7 +92,6 @@ class HomePage extends Page {
     });
     await this.launchesMenuItem.click();
   }
-
 }
 
 module.exports = HomePage;
