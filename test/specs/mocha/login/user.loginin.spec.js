@@ -1,8 +1,6 @@
-const PageFactory = require("../pageobjects/pageFactory");
+const PageFactory = require("../../../jasmine/ddt/pageobjects/pageFactory");
 const { assert } = require("chai");
-// const firedBrowser = require("../wrapper/browser");
-const dockerConfig = require("../wrapper/browser")
-const { multiremote } = require("webdriverio");
+const dockerConfig = require("../../../wrapper/browser")
 
 describe("Check navigation items number", async () => {
   let testBrowser;
@@ -25,7 +23,7 @@ describe("Check navigation items number", async () => {
     await testBrowser.deleteSession();
   });
 
-  it("should login with valid user credentials1", async () => {
+  it("should login with valid user credentials3", async () => {
     const expectedNumberOfNavButtons = 6;
     await pageFactory.homePage.userLogoimage.baseElement.waitForClickable({
       timeout: 15000,
@@ -39,7 +37,7 @@ describe("Check navigation items number", async () => {
     );
   });
 
-  it("should login with valid user credentials2", async () => {
+  it("should login with valid user credentials4", async () => {
     const expectedNumberOfNavButtons = 6;
     await pageFactory.homePage.userLogoimage.baseElement.waitForClickable({
       timeout: 15000,

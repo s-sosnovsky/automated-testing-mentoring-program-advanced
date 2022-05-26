@@ -5,7 +5,7 @@ module.exports = {
     reporter: 'allure-mocha',
     timeout: 60000,
     ui: 'bdd',
-    spec: 'test/specs/*.js',
+    spec: 'test/specs/mocha/**/*.js',
     reporterOption:{
         "reporterEnabled": "allure-mocha",
         "allureMochaReporterOptions": {

@@ -1,4 +1,4 @@
-const customLogger = require("../../utils/helper/logger/logger.config");
+const customLogger = require("../../../utils/helper/logger/logger.config");
 
 class WDIOBaseCollection {
   constructor(browser, collectionName, locator) {
@@ -45,6 +45,11 @@ class WDIOBaseCollection {
       `Clicking "${textToClick}" text in "${this._collectionName}"`
     );
     return this._collection[elementToClickIndex].click();
+  }
+
+  async clickElementWithPosition(position){
+    // await this._collection[position].waitForClickable({timeout:15000});
+    await this._collection[position].click();
   }
 }
 

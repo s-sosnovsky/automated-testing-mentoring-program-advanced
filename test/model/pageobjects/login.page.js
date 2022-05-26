@@ -1,6 +1,5 @@
 const Page = require("./page");
 const WDIOBaseElement = require("./base/wdio.base.element");
-const reporter = require("../utils/helper/reporter/reporter")
 
 class LoginPage extends Page {
 

@@ -1,5 +1,4 @@
-// const browser = require("../wrapper/fired.browser.new");
-const customLogger = require("../utils/helper/logger/logger.config");
+const customLogger = require("../../utils/helper/logger/logger.config");
 
 class Page {
   baseUrl = "http://192.168.0.101:8080";
