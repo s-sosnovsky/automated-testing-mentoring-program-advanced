@@ -1,8 +1,6 @@
-const PageFactory = require("../pageobjects/pageFactory");
+const PageFactory = require("../../../jasmine/ddt/pageobjects/pageFactory");
 const { assert } = require("chai");
-// const firedBrowser = require("../wrapper/browser");
-const dockerConfig = require("../wrapper/browser")
-const { multiremote } = require("webdriverio");
+const dockerConfig = require("../../../wrapper/browser")
 
 describe("Check navigation items number", async () => {
   let testBrowser;

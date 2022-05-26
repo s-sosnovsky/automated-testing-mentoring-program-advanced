@@ -1,4 +1,4 @@
-const customLogger = require("../../utils/helper/logger/logger.config");
+const customLogger = require("../../test/utils/helper/logger/logger.config");
 
 class WDIOBaseElement {
   

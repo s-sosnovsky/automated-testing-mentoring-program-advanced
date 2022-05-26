@@ -6,7 +6,8 @@
     "scripts": {
         "remove-logs": "node ./test/utils/cleanup/logsCleaner.js",
         "pretest": "npm run remove-logs",
-        "test": "mocha --config ./test/config/mocha.config.js"
+        "test:mocha": "mocha --config ./test/config/mocha/mocha.config.js",
+        "test:jasmine": "jasmine --config=./test/config/jasmine/jasmine.json"
     },
     "repository": {
         "type": "git",
@@ -23,8 +24,8 @@
         "chai": "^4.3.6",
         "dotenv": "^16.0.0",
         "geckodriver": "^3.0.1",
-        "mocha": "^9.2.2",
-        "mocha-allure-reporter": "^1.4.0"
+
+        "jasmine": "^4.1.0"
     },
     "dependencies": {
         "allure-commandline": "^2.17.2",
