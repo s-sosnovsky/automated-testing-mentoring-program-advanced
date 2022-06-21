@@ -66,11 +66,14 @@ allure-results/
 # allure results
 allure-report/
 
-#vs code config
+# vs code config
 .vscode/
 
-#sonar scanner local
+# sonar scanner local
 .scannerwork/
 
-#mochawesome-report
+# mochawesome-report
 mochawesome-report/
+
+# screenshots
+screenshots/

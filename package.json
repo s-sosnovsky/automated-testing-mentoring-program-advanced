@@ -7,7 +7,10 @@
         "remove-logs": "node ./test/utils/cleanup/logsCleaner.js",
         "pretest": "npm run remove-logs",
         "test:mocha": "mocha --config ./test/config/mocha/mocha.config.js",
-        "test:jasmine": "jasmine --config=./test/config/jasmine/jasmine.json"
+        "test:jasmine": "jasmine --config=./test/config/jasmine/jasmine.json",
+        "test:jasmineplaywrightui": "jasmine --config=./test/config/jasmine/jasmine.playwright.ui.json",
+        "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json"
+
     },
     "repository": {
         "type": "git",
@@ -24,8 +27,8 @@
         "chai": "^4.3.6",
         "dotenv": "^16.0.0",
         "geckodriver": "^3.0.1",
-
-        "jasmine": "^4.1.0"
+        "jasmine": "^4.1.0",
+        "playwright": "^1.22.2"
     },
     "dependencies": {
         "allure-commandline": "^2.17.2",

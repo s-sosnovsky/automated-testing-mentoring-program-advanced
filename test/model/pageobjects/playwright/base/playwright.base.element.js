@@ -1,11 +1,11 @@
-const customLogger = require("../../../utils/helper/logger/logger.config");
+const customLogger = require("../../../../utils/helper/logger/logger.config")
 
-class WDIOBaseElement {
+class PlaywrightBaseElement {
   
-  constructor(browser, elementName, locator) {
-    this._browser = browser;
+  constructor(page, elementName, locator) {
+    this._page = page;
     this._elementName = elementName
-    this._element = this._browser.$(locator)
+    this._element = this._page.locator(locator)
   }
 
   get baseElement() {
@@ -13,7 +13,6 @@ class WDIOBaseElement {
   }
 
   async click() {
-    await this._element.waitForClickable({ timeout: 15000 });
     customLogger.info(`Clicking on element: "${this._elementName}"`);
     return this._element.click();
   }
@@ -26,8 +25,10 @@ class WDIOBaseElement {
 
   async setValue(value) {
     customLogger.info(`set value to the element: "${this._elementName}"`);
-    return this._element.setValue(value);
+    return this._element.type(value)
   }
+
+
 }
 
-module.exports = WDIOBaseElement;
+module.exports = PlaywrightBaseElement;
