@@ -9,8 +9,9 @@
         "test:mocha": "mocha --config ./test/config/mocha/mocha.config.js",
         "test:jasmine": "jasmine --config=./test/config/jasmine/jasmine.json",
         "test:jasmineplaywrightui": "jasmine --config=./test/config/jasmine/jasmine.playwright.ui.json",
-        "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json"
-
+        "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json",
+        "test:jasmineapi": "jasmine --config=./test/config/jasmine/jasmine.api.json",
+        "test:jasminehybrid": "jasmine --config=./test/config/jasmine/jasmine.hybrid.json"
     },
     "repository": {
         "type": "git",
@@ -23,9 +24,12 @@
     },
     "homepage": "https://github.com/s-sosnovsky/automated-testing-mentoring-program-advanced#readme",
     "devDependencies": {
+        "@faker-js/faker": "^7.3.0",
         "allure-mocha": "^2.0.0-beta.15",
+        "axios": "^0.27.2",
         "chai": "^4.3.6",
         "dotenv": "^16.0.0",
+        "faker": "^6.6.6",
         "geckodriver": "^3.0.1",
         "jasmine": "^4.1.0",
         "playwright": "^1.22.2"

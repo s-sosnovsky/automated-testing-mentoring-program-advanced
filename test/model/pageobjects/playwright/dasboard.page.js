@@ -1,10 +1,11 @@
 const Page = require("./page");
 const PlaywrightBaseCollection = require("./base/playwright.base.collection");
+const env = require("../../../data/api/env.json")
 
 class DashboardPage extends Page {
   constructor(page) {
     super(page);
-    this.url = "/ui/#default_personal/dashboard/28";
+    this.url = `/ui/#default_personal/dashboard/${env.dashboardId}`;
     this._page = page;
   }
   async open() {
