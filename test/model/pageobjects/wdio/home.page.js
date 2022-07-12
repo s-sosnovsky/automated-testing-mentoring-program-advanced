@@ -1,5 +1,4 @@
 const Page = require("./page");
-//const browser = require("../wrapper/fired.browser.new");
 const WDIOBaseElement = require("./base/wdio.base.element");
 const WDIOBaseCollection = require("./base/wdio.base.collection");
 
@@ -8,6 +7,7 @@ class HomePage extends Page {
     super(browser);
     this.url = "/";
     this._browser = browser;
+    this.launchesTableHeader = null;
   }
   async open() {
     return super.open(this.url);
@@ -37,7 +37,40 @@ class HomePage extends Page {
     );
   }
 
+  get launchesMenuItem() {
+    return new WDIOBaseElement(
+      this._browser,
+      "Launches menu item button",
+      "//a[@href='#default_personal/launches']"
+    );
+  }
+
+  get launchesLinks(){
+    return new WDIOBaseCollection(
+      this._browser,
+      "Launches Links",
+      "//div[contains(@class,'itemInfo__main-info')]"
+    );
+  }
+
+  get body(){
+    return new WDIOBaseElement(
+      this._browser,
+      "Launches menu item button",
+      "//body"
+    )
+  }
+
+  async getLaunchesTableHeader(header) {
+    return new WDIOBaseElement(
+      this._browser,
+      `Launches Table Header ${header}`,
+      `//span[contains(@class, 'headerCell__title-full')][text()='${header}']`
+    );
+  }
+
   async logout() {
+    await this.userLogoimage.baseElement.waitForClickable({ timeout: 15000 });
     await this.userLogoimage.click();
     const isUserBlockMenuDisplayed =
       await this.userBlockMenu.baseElement.isDisplayed();
@@ -52,6 +85,14 @@ class HomePage extends Page {
     await logoutButton.isDisplayed();
     await logoutButton.click();
   }
+
+  async openLaunches() {
+    await this.launchesMenuItem.baseElement.waitForClickable({
+      timeout: 15000,
+    });
+    await this.launchesMenuItem.click();
+  }
+
 }
 
 module.exports = HomePage;
