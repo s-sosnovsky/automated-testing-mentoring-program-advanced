@@ -1,0 +1,19 @@
+{
+    "token": "642ea848-4283-4b0c-8ac9-c075b3f18467",
+    "endpoint": "https://reportportal.epam.com/api/v1",
+    "launch": "sergey_sosnovsky_TEST_EXAMPLE",
+    "project": "sergey_sosnovsky_personal",
+    "takeScreenshot": "onFailure",
+    "description": "Awesome launch description.",
+    "attributes": [
+      {
+        "key": "launchAttributeKey",
+        "value": "launchAttributeValue"
+      }
+    ],
+    "mode": "DEFAULT",
+    "debug": false,
+    "restClientConfig": {
+      "timeout": 0
+    }
+  }

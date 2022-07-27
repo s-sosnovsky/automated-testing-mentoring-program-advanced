@@ -25,6 +25,7 @@
     },
     "homepage": "https://github.com/s-sosnovsky/automated-testing-mentoring-program-advanced#readme",
     "devDependencies": {
+        "@reportportal/agent-js-cucumber": "^5.0.2",
         "allure-mocha": "^2.0.0-beta.15",
         "chai": "^4.3.6",
         "dotenv": "^16.0.0",
