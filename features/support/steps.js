@@ -1,4 +1,4 @@
-const { When, Then, Before, After } = require("@cucumber/cucumber");
+const { When, Then, Before, After } = require("cucumber");
 const logger = require("../../test/utils/helper/logger/logger.config");
 
 const PageFactory = require("../../test/model/pageobjects/playwright/pageFactory");
