@@ -1,22 +1,33 @@
 const { When, Then, Before, After } = require("cucumber");
 const logger = require("../../test/utils/helper/logger/logger.config");
-const SlackService = require("../../integrations/SlackService")
+const SlackService = require("../../integrations/SlackService");
+const JiraService = require("../../integrations/JiraService");
 
 const PageFactory = require("../../test/model/pageobjects/playwright/pageFactory");
 const { assert } = require("chai");
 let pageFactory;
 const slackService = new SlackService();
+let jiraService;
+
 
 Before({ timeout: 30 * 1000 }, async function (scenario) {
   await this.setDefaultPage();
   pageFactory = new PageFactory(this.page);
   await pageFactory.loginPage.login("default", "1q2w3e");
-  slackService.sendMessage(`${await scenario.pickle.name}: test started`)
+  await slackService.sendMessage(`${scenario.pickle.name}: test started`);
+  jiraService = new JiraService(scenario.pickle.name)
+  await jiraService.changeStatus("running");
 });
 
-After({ timeout: 30 * 1000 }, async function () {
+After({ timeout: 30 * 1000 }, async function (scenario) {
   await pageFactory.homePage.logout();
-  slackService.sendMessage(`${await scenario.pickle.name}: test ended`)
+  await slackService.sendMessage(`${scenario.pickle.name}: test ended`);
+  if (scenario.result.status === "passed") {
+    await jiraService.changeStatus("passed");
+  } else {
+    await jiraService.changeStatus("failed");
+    await jiraService.addComment(`${scenario.pickle.name} failed with stack: ${scenario.result.exception.stack}`);
+  }
 });
 
 When("Bob goes to launches", { timeout: 30 * 1000 }, async function () {
@@ -44,9 +55,9 @@ Then(
         header
       );
       await headerElement.baseElement.waitFor({ state: "attached" });
-      
+
       assert.isAbove(
-        await headerElement.baseElement.count(), 
+        await headerElement.baseElement.count(),
         0,
         "element does not present in DOM"
       );
