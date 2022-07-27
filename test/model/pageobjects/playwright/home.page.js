@@ -45,7 +45,7 @@ class HomePage extends Page {
   }
 
   get launchesLinks(){
-    return new WDIOBaseCollection(
+    return new PlaywrightBaseCollection(
       this._page,
       "Launches Links",
       "//div[contains(@class,'itemInfo__main-info')]"
