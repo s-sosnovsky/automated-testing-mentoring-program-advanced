@@ -12,7 +12,8 @@
         "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json",
         "test:jasmineapi": "jasmine --config=./test/config/jasmine/jasmine.api.json",
         "test:jasminehybrid": "jasmine --config=./test/config/jasmine/jasmine.hybrid.json",
-        "test:cucumberparallel": "cucumber-js --config=./test/config/cucumber/cucumber-parallel.js --exit"
+        "test:cucumberparallel": "cucumber-js --config=./test/config/cucumber/cucumber-parallel.js --exit",
+        "test:cucumberreportportal": "cucumber-js  -f ./reportPortalFormatter.js --exit"
     },
     "repository": {
         "type": "git",
