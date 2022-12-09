@@ -77,3 +77,6 @@ mochawesome-report/
 
 # screenshots
 screenshots/
+
+# cucumber-report.html
+cucumber-report.html

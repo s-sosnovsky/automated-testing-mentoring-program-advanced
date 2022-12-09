@@ -25,6 +25,15 @@ class PlaywrightBaseCollection {
     await element.waitFor()
     return element;
   }
+
+  async clickElementWithPosition(position){
+    const element = await this.getElementWithPosition(position);
+    customLogger.info(
+      `Clicking on element "${this._collectionName}" with position "${position}"`
+    );
+    return await element.click();
+  }
+  
 }
 
 module.exports = PlaywrightBaseCollection;

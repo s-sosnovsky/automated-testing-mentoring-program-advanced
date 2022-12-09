@@ -11,7 +11,8 @@
         "test:jasmineplaywrightui": "jasmine --config=./test/config/jasmine/jasmine.playwright.ui.json",
         "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json",
         "test:jasmineapi": "jasmine --config=./test/config/jasmine/jasmine.api.json",
-        "test:jasminehybrid": "jasmine --config=./test/config/jasmine/jasmine.hybrid.json"
+        "test:jasminehybrid": "jasmine --config=./test/config/jasmine/jasmine.hybrid.json",
+        "test:cucumberparallel": "cucumber-js --config=./test/config/cucumber/cucumber-parallel.js --exit"
     },
     "repository": {
         "type": "git",
@@ -29,12 +30,13 @@
         "axios": "^0.27.2",
         "chai": "^4.3.6",
         "dotenv": "^16.0.0",
-        "faker": "^6.6.6",
+        "faker": "^5.5.3",
         "geckodriver": "^3.0.1",
         "jasmine": "^4.1.0",
         "playwright": "^1.22.2"
     },
     "dependencies": {
+        "@cucumber/cucumber": "^8.5.0",
         "allure-commandline": "^2.17.2",
         "fs-extra": "^10.0.1",
         "mochawesome": "^7.1.3",
