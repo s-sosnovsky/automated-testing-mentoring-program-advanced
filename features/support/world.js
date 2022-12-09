@@ -1,8 +1,10 @@
-const { setWorldConstructor } = require("@cucumber/cucumber");
+const { setWorldConstructor } = require("cucumber");
 const playwright = require('playwright');
+let { RPWorld } = require('@reportportal/agent-js-cucumber');
 
-class CustomWorld {
-    constructor(){
+class CustomWorld extends RPWorld{
+    constructor(...args){
+        super(...args);
     }
 
     async setDefaultPage(){

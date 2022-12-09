@@ -12,7 +12,8 @@
         "test:jasmineplaywrightintercept": "jasmine --config=./test/config/jasmine/jasmine.playwright.intercept.json",
         "test:jasmineapi": "jasmine --config=./test/config/jasmine/jasmine.api.json",
         "test:jasminehybrid": "jasmine --config=./test/config/jasmine/jasmine.hybrid.json",
-        "test:cucumberparallel": "cucumber-js --config=./test/config/cucumber/cucumber-parallel.js --exit"
+        "test:cucumberparallel": "cucumber-js --config=./test/config/cucumber/cucumber-parallel.js --exit",
+        "test:cucumberreportportal": "cucumber-js  -f ./reportPortalFormatter.js --exit"
     },
     "repository": {
         "type": "git",
@@ -25,6 +26,7 @@
     },
     "homepage": "https://github.com/s-sosnovsky/automated-testing-mentoring-program-advanced#readme",
     "devDependencies": {
+        "@reportportal/agent-js-cucumber": "^5.0.2",
         "@faker-js/faker": "^7.3.0",
         "allure-mocha": "^2.0.0-beta.15",
         "axios": "^0.27.2",
@@ -38,6 +40,7 @@
     "dependencies": {
         "@cucumber/cucumber": "^8.5.0",
         "allure-commandline": "^2.17.2",
+        "cucumber": "^6.0.7",
         "fs-extra": "^10.0.1",
         "mochawesome": "^7.1.3",
         "webdriver": "^7.19.5",
